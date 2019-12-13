@@ -97,7 +97,17 @@ public class ArrayList<E> implements List<E> {
         return "Index: " + index + ", Size: " + this.size;
     }
 
-    /**\
+    /**
+     * Метод trimToSize()
+     * Уменьшает вместимость массива element до size
+     */
+    public void trimToSize() {
+        if (this.size < this.element.length) {
+            this.element = this.size == 0 ? EMPTY_ELEMENT : Arrays.copyOf(this.element, this.size);
+        }
+
+    }
+    /**
      * Метод size()
      * Возвращает колличество элементов в ArrayList-е
      */
